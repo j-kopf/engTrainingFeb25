@@ -2,6 +2,7 @@
 1. no ai/copilot
 2. manually look for these if you don't find them all, its all good
 3. no teams...individual ? 
+4. this does not build or compile --> this is just meant to be a code exercise so this does not need to be built or run
 
 
 
@@ -73,7 +74,7 @@ Issue & Explanation:
   - No Permission Check for taxID => GUEST can see sensitive data
 Details / Impact:
   - The UI checks CAN_VIEW_SENSITIVE_DATA, but the resolver only checks session existence.
-    A GUEST can bypass the UI and still retrieve taxID via GraphQL calls.
+    A GUEST can bypass the UI and still retrieve taxID via GraphQL calls. Check the check.ts for more on the permissions.
 Suggested Fix & Code Snippet:
   - Add a permission check in the resolver:
     fetchUserDetails: async (_, { userId }, { dataSources, session }) => {

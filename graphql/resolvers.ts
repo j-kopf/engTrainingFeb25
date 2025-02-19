@@ -55,7 +55,8 @@ const resolvers: IResolvers = {
         throw new Error('Session required.');
       }
       if (!permissionCheck('CAN_VIEW_ACCOUNT_SETTINGS', session)) {
-        throw new Error('Access denied: You cannot view account settings.');
+        throw new Error('Access denied: You cannot view account settings.'); ///this is omitting a check to make sure 
+        ///the user is checking their own settings
       }
       return dataSources.userAPI.getAccountSettings(userId);
     },
