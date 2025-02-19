@@ -46,8 +46,8 @@ Details / Impact:
 Suggested Fix & Code Snippet:
   - Don’t log secrets. 
     Vulnerable line:
-      logger.info("Loaded DB credentials -> user: " + DB_USER + ", password: " + DB_PASSWORD);
-    Remove or mask the password:
+      logger.info("user Info" + DB_USER + ", " + API_KEY);
+    Remove or mask the api key:
       logger.info("Loaded DB user: " + DB_USER);
 
 ------------------------------------------------------------------
